@@ -26,6 +26,30 @@ def encrypt(text, shift1, shift2):
     return encrypted
 
 
+# Function to decrypt the content
+"""
+This function is the decryption function. In this function the encrypted text that is stored in the encryption_text.txt is decrypted.
+"""
+def decrypt(text, shift1, shift2):
+    decrypted = ""
+    for char in text:
+        if char.isupper():
+            if 'A' <= char <=  'M':
+                decrypted += chr((ord(char) - ord('A') + shift1) %13 + ord('A')) 
+            elif 'N' <= char <= 'z':
+                shift = shift2 * shift2
+                decrypted += chr((ord(char) - ord('N') - shift) %13 + ord('N'))
+        elif char.islower():
+            if 'a' <= char <= 'm':
+                shift = shift1 * shift2
+                decrypted += chr((ord(char) - ord('a') - shift) %13 + ord('a'))
+            elif 'n' <= char <= 'z':
+                shift = shift1 + shift2
+                decrypted += chr((ord(char) - ord('n') + shift) %13 + ord('n'))
+        else:
+            decrypted += char
+    return decrypted
+
 
 # Operations for the input of the shift value and content of the file.
 try:
@@ -58,6 +82,19 @@ try:
     print(raw_text)
     print("\n\n"+ "The Encrypted text are: " + "\n")
     print(enc_text)
+
+     # Decrypting the content of the file 'encrypt_text.txt'.
+    encrypted_line = enc_text.strip()
+    decrypt_text = decrypt(encrypted_line, shift1, shift2)
+
+    # writing the decrypted text in the file Decryption_text.txt 
+    with open("Decryption_text.txt", 'w+') as file:
+        file.write(decrypt_text)
+        file.seek(0)
+        decrypted_text = file.read()
+
+    print("\n\n" + "The Decrypted text is: " + "\n")
+    print(decrypted_text)
 
 except FileNotFoundError as e:
     print("Error: {e}")
