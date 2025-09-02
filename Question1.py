@@ -26,6 +26,7 @@ def encrypt(text, shift1, shift2):
     return encrypted
 
 
+
 # Function to decrypt the content
 """
 This function is the decryption function. In this function the encrypted text that is stored in the encryption_text.txt is decrypted.
