@@ -1,7 +1,5 @@
 '''
-<<<<<<< HEAD
 This is the code for the straight line using turtle graphics.
-
 '''
 
 import turtle
