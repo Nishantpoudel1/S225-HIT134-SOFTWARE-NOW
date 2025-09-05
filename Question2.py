@@ -66,7 +66,7 @@ def calculate_largest_range(all_data):
         print(f"Error calculating largest temperature range: {e}")
 
 
-# Function 3: Temperature stability (using pandas std)
+# Function 3: Temperature stability 
 def calculate_temperature_stability(all_data):
     try: 
         station_std = {}
