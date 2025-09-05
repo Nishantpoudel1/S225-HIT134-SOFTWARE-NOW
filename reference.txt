@@ -1,5 +1,0 @@
-#references
-
-McKinney, W. (2022) Python for Data Analysis. Japan: O'Reilly Media.
-Python (2025) Built-in Functions — Python 3.8.3 documentation, docs.python.org. Available at: https://docs.python.org/3/library/functions.html.
-Data model — Python 3.10.4 documentation (2025) docs.python.org. Available at: https://docs.python.org/3/reference/datamodel.html. 
